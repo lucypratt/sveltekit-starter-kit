@@ -1,5 +1,6 @@
 import {kindeAuthClient, type SessionManager} from '@kinde-oss/kinde-auth-sveltekit';
 import type {RequestEvent} from '@sveltejs/kit';
+import {checkAuthentication} from '$lib/auth';
 
 export async function load({request}: RequestEvent) {
 	const isAuthentication = await kindeAuthClient.isAuthenticated(
